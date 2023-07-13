@@ -60,6 +60,8 @@ them in `POSTGRES_MULTIPLE_DATABASES`:
         environment:
             - POSTGRES_MULTIPLE_DATABASES: "test-db-1:user:pwd","test-db-2:user:pwd"
 
+### Example
+
 The `create-multiple-postgresql-full.sh` and `docker-compose.yml` files show an example
 of how to create both databases and users exclusively to them and assign passwords to
 them. `user1` will not have access to `db1`,`db2`.
