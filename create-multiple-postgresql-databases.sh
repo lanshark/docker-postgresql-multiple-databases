@@ -9,7 +9,7 @@ function create_user_and_database() {
 
     echo "Creating database '$database' with user '$user' and password '$password'"
     psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "postgres" <<-EOSQL
-      CREATE USER $user;
+      CREATE USER $user IF NOT EXISTS;
       ALTER USER $user WITH ENCRYPTED PASSWORD '$password';
       CREATE DATABASE $database ENCODING "UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE="template0";
       GRANT ALL PRIVILEGES ON DATABASE $database TO $user;
