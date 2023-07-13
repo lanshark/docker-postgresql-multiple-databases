@@ -1,13 +1,13 @@
 services:
   postgres:
-    image: postgis:15-3.3
+    image: postgis/postgis:15-3.3
     container_name: example-postgres
     environment:
       - POSTGRES_MULTIPLE_DATABASES="db1","db2","db3"
       - POSTGRES_MULTIPLE_USERS="user1","user2","user3
       - POSTGRES_MULTIPLE_PASSWORDS="password1","password2","password3"
-      - POSTGRES_USER=superrole
-      - POSTGRES_PASSWORD=superpassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
     ports:
       - "5432:5432"
     volumes:
